@@ -38,7 +38,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewhl
         holder.titleTxt.setText(items.get(position).getName());
         int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImagePath(), "drawable", holder.itemView.getContext().getPackageName());
         Glide.with(context)
-                .load(drawableResourceId)
+                .load(items.get(position).getImagePath())
                 .into(holder.pic);
     }
 
