@@ -45,13 +45,13 @@
                     android:id="@+id/faveBtn"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintBottom_toBottomOf="@+id/backBtn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/backBtn"
                     app:srcCompat="@drawable/favorite" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/titleDetailTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chi Tiết"
@@ -64,7 +64,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/pic"
                     android:layout_width="0dp"
                     android:layout_height="312dp"
                     android:layout_marginTop="8dp"
@@ -198,7 +198,7 @@
                     app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/minusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_gravity="center"
@@ -209,7 +209,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/numTxt"
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -222,7 +222,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/plusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_gravity="center"
@@ -242,9 +242,50 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/yellow_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addBtn"
+            style="@android:style/Widget.Button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_red_full_corner"
+            android:drawableStart="@drawable/cart"
+            android:paddingStart="16dp"
+            android:text="Thêm giỏ hàng"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/totalTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Tổng tiền"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/dark_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="0 VND"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

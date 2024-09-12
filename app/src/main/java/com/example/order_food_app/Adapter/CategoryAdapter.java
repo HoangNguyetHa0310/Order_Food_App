@@ -1,6 +1,7 @@
 package com.example.order_food_app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.order_food_app.Activity.ListFoodActivity;
 import com.example.order_food_app.Domain.Category;
 import com.example.order_food_app.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewhlder> {
 
@@ -36,10 +39,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewhl
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.viewhlder holder, int position) {
         holder.titleTxt.setText(items.get(position).getName());
-        int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImagePath(), "drawable", holder.itemView.getContext().getPackageName());
+
         Glide.with(context)
                 .load(items.get(position).getImagePath())
                 .into(holder.pic);
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ListFoodActivity.class);
+            intent.putExtra("CategoryId", items.get(position).getId());
+            intent.putExtra("CategoryName", items.get(position).getName());
+            context.startActivity(intent);
+        });
+
     }
 
     @Override
