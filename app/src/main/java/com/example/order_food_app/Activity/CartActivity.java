@@ -66,5 +66,26 @@ public class CartActivity extends BaseActivity {
 
     private void setVariable() {
         binding.backBtn.setOnClickListener(view -> startActivity(new Intent(CartActivity.this, MainActivity.class)));
+        binding.checkOutBtn.setOnClickListener(view -> {
+            // Lấy tổng tiền từ CartActivity
+            double total = Double.parseDouble(binding.totalTxt.getText().toString().replace(" VND", ""));
+
+            // Tạo Intent để chuyển sang PaymentActivity
+            Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
+            // Truyền dữ liệu tổng tiền vào Intent
+            intent.putExtra("total", total);
+
+            // Khởi động PaymentActivity
+            startActivity(intent);
+
+            // Đóng CartActivity
+            finish();
+        });
+        // Xử lý nút backBtnCart
+        binding.backBtnCart.setOnClickListener(view -> {
+            // Quay lại MainActivity
+            startActivity(new Intent(CartActivity.this, MainActivity.class));
+            finish(); // Đóng CartActivity
+        });
     }
 }
