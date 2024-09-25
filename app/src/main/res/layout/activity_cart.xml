@@ -193,16 +193,45 @@
                     app:layout_constraintTop_toTopOf="@+id/textView15" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/checkOutBtn"
-                style="@android:style/Widget.Button"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/bg_red_full_corner"
-                android:text="Đặt hàng"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:layout_margin="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/backBtnCart"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_red_full_corner"
+                    android:text="Quay lại"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:paddingLeft="42dp"
+                    android:paddingRight="42dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/checkOutBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/checkOutBtn"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_red_full_corner"
+                    android:text="Thanh toán"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:paddingLeft="42dp"
+                    android:paddingRight="42dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backBtnCart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
