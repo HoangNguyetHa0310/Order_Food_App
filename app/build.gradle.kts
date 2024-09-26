@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.order_food_app"
+        applicationId = "com.hpv.wowfood.order_food_app"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
